@@ -1,5 +1,5 @@
 @charset "utf-8";
-@font-face{font-family:'Wanted Sans';src:url(/assets/fonts/wanted-sans-kr.woff2) format('woff2');font-weight:400 1000;font-style:normal;font-display:swap}
+@font-face{font-family:'Wanted Sans';src:url(/assets/img/p/fonts/wanted-sans-kr.woff2) format('woff2');font-weight:400 1000;font-style:normal;font-display:swap}
 /* 로얄익스프레스 — 울산 포장이사 · 로얄 에메랄드 & 골드 */
 :root{
   --em9:#0b2a22; --em8:#11513f; --em7:#15604b; --em6:#1a6f57; --em5:#1f8a69; --em1:#e6f4ee; --mint:#eef7f2; --mint-2:#dcefe5;
