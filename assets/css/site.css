@@ -1,5 +1,5 @@
 @charset "utf-8";
-@font-face{font-family:'Wanted Sans';src:url(/assets/img/p/fonts/wanted-sans-kr.woff2) format('woff2');font-weight:400 1000;font-style:normal;font-display:swap}
+@font-face{font-family:'Wanted Sans';src:url(/assets/fonts/wanted-sans-kr.woff2) format('woff2');font-weight:400 1000;font-style:normal;font-display:swap}
 /* 로얄익스프레스 — 울산 포장이사 · 로얄 에메랄드 & 골드 */
 :root{
   --em9:#0b2a22; --em8:#11513f; --em7:#15604b; --em6:#1a6f57; --em5:#1f8a69; --em1:#e6f4ee; --mint:#eef7f2; --mint-2:#dcefe5;
@@ -1196,3 +1196,45 @@ body.js-scroll .road__truck{animation:none}
 
 /* 8) 등장 효과는 JS가 켤 때만 (JS가 없거나 실패하면 항상 보이게) */
 }
+/* 동네 링크 그리드 */
+.donglinks{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.donglinks li{width:auto;background:none;padding:9px 0;border-bottom:1px solid var(--line)}
+.donglinks a{font-weight:600;color:var(--ink)}
+.donglinks a:hover{color:var(--em6);text-decoration:underline;text-underline-offset:3px}
+.guideline .btn--gold{background:var(--ac);color:#17202c}.guideline .btn--gold:hover{background:#ff9166}
+.hero h1 .hero__kick{display:inline-flex;font-size:16px;line-height:1.4;letter-spacing:-.01em;margin-bottom:24px;font-weight:600}
+@media (max-width:560px){.hero h1 .hero__kick{font-size:14px;margin-bottom:18px}}
+/* 울산 전용 메뉴: 구·군 5열 + 동네 링크 */
+.mega.mega5{grid-template-columns:repeat(5,1fr);gap:0 28px}
+.mega5 .mega__h a{color:var(--em8);font-weight:900}
+.mega5 .mega__h a:hover{color:var(--em6)}
+.nav .mega5 ul a{display:block;grid-template-columns:none;padding:6px 0;margin:0;font-size:15px;font-weight:500;color:var(--ink-2)}
+.nav .mega5 ul li{border-bottom:0}
+.nav .mega5 ul a:hover{color:var(--em6);background:none}
+@media (max-width:1100px){.mega.mega5{grid-template-columns:1fr 1fr;gap:12px 20px}}
+.kwtags a{color:var(--ink-2)}
+.kwtags li:hover{border-color:var(--em6)}
+.kwtags li:hover a{color:var(--em6)}
+
+/* ===== 모바일 최적화 ===== */
+@media (max-width:640px){
+  /* 히어로 제목이 화면 밖으로 잘리던 문제(제목 줄바꿈 금지 + 배지가 제목과 한 줄) */
+  .hero h1{white-space:normal;word-break:keep-all}
+  .hero h1 .hero__kick{display:flex;width:fit-content;margin-bottom:18px}
+  .hero h1{font-size:40px;line-height:1.16}
+  .hero__lead,.phead p,.shead p{word-break:keep-all}
+  .hero__in>div,.hero__in{min-width:0}
+
+  /* 손가락으로 누를 수 있는 크기(44px) 확보 */
+  .topbar__in a,.crumb a,.kwtags a,.agroup a,.ftr a,.donglinks a{
+    display:inline-flex;align-items:center;min-height:44px}
+  .ftr__copy a{min-height:40px}
+  .filter button{min-width:68px;min-height:44px}
+  .chips label,label:has(>input[type=checkbox]){
+    display:inline-flex;align-items:center;gap:10px;min-height:44px}
+  input[type=checkbox]{width:22px;height:22px;flex:0 0 auto}
+
+  .crumb a{padding-inline:6px;margin-inline:-6px}
+  .logo__en{font-size:11.5px;letter-spacing:.12em}
+}
+@media (max-width:1080px){body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}}
