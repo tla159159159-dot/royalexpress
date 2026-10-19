@@ -1226,7 +1226,7 @@ body.js-scroll .road__truck{animation:none}
   .hero__in>div,.hero__in{min-width:0}
 
   /* 손가락으로 누를 수 있는 크기(44px) 확보 */
-  .topbar__in a,.crumb a,.kwtags a,.agroup a,.ftr a,.donglinks a{
+  .topbar__in a,.crumb a,.kwtags a,.agroup a:not(.area),.ftr a,.donglinks a{
     display:inline-flex;align-items:center;min-height:44px}
   .ftr__copy a{min-height:40px}
   .filter button{min-width:68px;min-height:44px}
@@ -1238,3 +1238,26 @@ body.js-scroll .road__truck{animation:none}
   .logo__en{font-size:11.5px;letter-spacing:.12em}
 }
 @media (max-width:1080px){body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}}
+
+/* ===== 제작 가이드 3-6 적용 (모바일·태블릿·PC) ===== */
+/* 그리드 칸이 내용에 밀려 좁아지지 않게 */
+.areas{grid-template-columns:repeat(5,minmax(0,1fr))}
+.areas--near{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:960px){
+  .areas{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .areas--near{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){.areas{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.area{min-width:0}
+.area b,.area span{word-break:keep-all;overflow-wrap:break-word}
+.grid,.cards,.flow,.steps,.hero__spec{min-width:0}
+.grid>*,.cards>*,.flow>*,.steps>*{min-width:0}
+
+/* 더블탭 확대 지연 제거 + 눌림 표시 */
+a,button,input,select,textarea,label,summary{touch-action:manipulation}
+a,button{-webkit-tap-highlight-color:rgba(31,75,176,.18)}
+
+/* 호버 효과는 마우스가 있는 큰 화면에서만 */
+@media (hover:none){
+  .area:hover img,.card:hover,.btn:hover{transform:none}
+}
