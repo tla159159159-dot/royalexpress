@@ -1261,3 +1261,9 @@ a,button{-webkit-tap-highlight-color:rgba(31,75,176,.18)}
 @media (hover:none){
   .area:hover img,.card:hover,.btn:hover{transform:none}
 }
+
+/* 동네 링크 목록: 둥근 테두리 잔상 제거 + 2열 유지 */
+.dong ul.donglinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}
+.donglinks li{border-radius:0;list-style:none;display:flex}
+.donglinks a{width:100%}
+@media (max-width:420px){.dong ul.donglinks{grid-template-columns:1fr}}
